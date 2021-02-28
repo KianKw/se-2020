@@ -95,7 +95,7 @@
 
   vimrc 还可以配置很多属性，如设置颜色主题、设置光标显示、自动插入文件头注释等等。另外插件的属性配置一般也在 vimrc 中。
 
-  附上我的 vimrc: [GitHub KianKw dotfiles](https://github.com/KianKw/dotfiles/blob/master/.vimrc)
+  附上我的 vimrc: [GitHub Kian dotfiles](https://github.com/kiankw/dotfiles/blob/master/.vimrc)
 
 * 插件安装
 

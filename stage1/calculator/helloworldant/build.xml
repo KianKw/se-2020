@@ -1,0 +1,28 @@
+<!--工程的名字是HelloWorld,要是源文件为HelloAnt.java则改为HelloAnt-->
+<project name="HelloWorld" default="run" basedir=".">
+ 
+   <!-- 定义资源，包括源文件所在目录，这个源文件必须在build.xml的子目录下，目标文件目录，用来存产生的HelloWorld.class，和jar文件 -->
+   <property name="src" value="src"/>
+   <property name="dest" value="classes"/>
+   <property name="hello_jar" value="hello.jar"/>
+ 
+   <!-- 定义第一个目标：初始化，新建目标文件目录 -->
+   <target name="init">
+   <mkdir dir="${dest}"/>
+   </target>
+ 
+   <!-- 定义第二个目标：编译源文件，把产品放入dest -->
+   <target name="compile" depends="init">
+   <javac srcdir="${src}" destdir="${dest}"/>
+   </target>
+ 
+   <!-- 定义第三个目标：构件jar文件，目标文件为hello_jar指定的文件名 -->
+   <target name="build" depends="compile">
+   <jar jarfile="${hello_jar}" basedir="${dest}"/>
+   </target>
+ 
+   <!-- 定义最后一个目标：运行文件 -->
+   <target name="run" depends="build">
+   <java classname="HelloWorld" classpath="${hello_jar}"/>
+   </target>
+</project>
